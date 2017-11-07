@@ -1,0 +1,13 @@
+[package]
+name = "libc-spawn"
+description = "Raw bindings to POSIX spawn APIs for Rust"
+version = "0.0.1"
+authors = ["CrLF0710 <crlf0710@gmail.com>"]
+license = "MIT/Apache-2.0"
+repository = "https://github.com/crlf0710/libc-spawn"
+documentation = "https://docs.rs/libc-spawn"
+
+[dependencies]
+libc = "0.2"
+cfg-if = "0.1"
+
