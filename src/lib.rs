@@ -8,6 +8,8 @@ extern crate libc;
 #[macro_use]
 extern crate cfg_if;
 
+pub mod optional_const;
+
 cfg_if! {
     if #[cfg(unix)] {
         mod unix;
