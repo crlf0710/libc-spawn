@@ -30,15 +30,15 @@ extern {
                         path: * const libc::c_char,
                         file_actions: * const posix_spawn_file_actions_t,
                         attrp: * const posix_spawnattr_t,
-                        argv: * const * mut libc::c_char,
-                        envp: * const * mut libc::c_char) -> libc::c_int;
+                        argv: * const * const libc::c_char,
+                        envp: * const * const libc::c_char) -> libc::c_int;
     
     pub fn posix_spawnp (pid: * mut libc::pid_t,
                          file: * const libc::c_char,
                          file_actions: * const posix_spawn_file_actions_t,
                          attrp: * const posix_spawnattr_t,
-                         argv: * const * mut libc::c_char,
-                         envp: * const * mut libc::c_char) -> libc::c_int;
+                         argv: * const * const libc::c_char,
+                         envp: * const * const libc::c_char) -> libc::c_int;
 
     pub fn posix_spawnattr_init (attr: * mut posix_spawnattr_t) -> libc::c_int;
 
