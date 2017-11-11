@@ -1,11 +1,11 @@
 use libc;
 
-extern {
-    fn libc_spawn_helper_environ() -> * const * const libc::c_char;
-    fn libc_spawn_helper_try_get_posix_spawn_usevfork(val: * mut libc::c_short) -> libc::c_int;
+extern "C" {
+    fn libc_spawn_helper_environ() -> *const *const libc::c_char;
+    fn libc_spawn_helper_try_get_posix_spawn_usevfork(val: *mut libc::c_short) -> libc::c_int;
 }
 
-pub fn environ() -> * const * const libc::c_char {
+pub fn environ() -> *const *const libc::c_char {
     unsafe { libc_spawn_helper_environ() }
 }
 
